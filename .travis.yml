@@ -3,14 +3,20 @@ dist: bionic
 language: python
 os: linux
 python: "3.7"
+env:
+  global:
+    - ONE=1
+    - TWO=2
 stages: 
   - test
 jobs:
   include:
     - name: "Test with py 3.7"
+      stage: test
       python: "3.7"
 # install required dependencies
-install:
-  - pip install -r requirements.txt
-script:
-  - pytest
+install: skip
+  # - pip install -r requirements.txt
+
+#script:
+#  - pytest
