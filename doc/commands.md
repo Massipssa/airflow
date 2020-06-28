@@ -1,0 +1,2 @@
+- list tasks: `airflow list_tasks <dag_id>`
+- test task: `airflow test <dag_id> <task_id> <data>`
