@@ -1,14 +1,14 @@
 import setuptools
 
-with open('../README.md', 'r') as fh:
+with open('README.md', 'r') as fh:
     long_description = fh.read()
     print(long_description)
 
 setuptools.setup(
-    name="example-pkg-YOUR-USERNAME-HERE",
+    name="example-pkg-massipssa",
     version="0.0.1",
     author="Example Author",
-    author_email="author@example.com",
+    author_email="kerrache.massipssa@gmail.com",
     description="A small example package",
     long_description=long_description,
     long_description_content_type="text/markdown",

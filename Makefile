@@ -1,12 +1,17 @@
 
 # pip command
 pip-install:
-	pip install -r requirements/requirements-python3.7.txt
+	@echo "Install required Python packages "
+	pip3 install -r requirements/requirements-python3.7.txt
 
 upgrade-setuptools:
-	# pip3 install --user --upgrade setuptools wheel
-	pip install --upgrade setuptools wheel
+	@echo "Upgrade setuptools and wheel"
+	pip3 install --upgrade setuptools wheel
+
+setup:
+	@echo "Create dist folder"
+	python3 src/setup.py sdist bdist_wheel
 
 # Docker
-push-image:
-	docker
+#push-image:
+#	docker

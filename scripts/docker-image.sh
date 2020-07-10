@@ -15,7 +15,7 @@ function push_image {
   docker login -u "$USERNAME" -p "$PASSWORD"
   docker build -t "$IMAGE" .
   docker push "$IMAGE"
-  echo "Image $IMAGE push to Docker Hub"
+  echo "Image $IMAGE pushed to Docker Hub"
 }
 
 function build_image() {
