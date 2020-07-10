@@ -5,8 +5,8 @@ from typing import List
 def string_comma_to_list(message: str) -> List[str]:
     return message.split(',') if message else []
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
 
     my_dic = {
         "key1": f"value1",

@@ -5,8 +5,9 @@ os: linux
 python: "3.7"
 env:
   global:
-    - ONE=1
-    - TWO=2
+    - VERSION=0.0.1
+    - TAG=myimage
+    - REPO=massipssa
 # stages names from jobs
 stages: 
   - test
@@ -29,7 +30,8 @@ jobs:
         - make upgrade-setuptools
     - name: "Build docker image"
       stage: build
-      install: skip
+      install:
+        - docker build -t $REPO/$TAG:$VERSION
     - name: "Push docker image"
       stage: push
       install: skip
