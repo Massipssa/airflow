@@ -1,8 +1,8 @@
+REQUIREMENTS="requirements/requirements-python3.7.txt"
 
-# pip command
 pip-install:
 	@echo "Install required Python packages "
-	pip3 install -r requirements/requirements-python3.7.txt
+	pip3 install -r $(REQUIREMENTS)
 
 setup:
 	@echo "Create dist folder"
@@ -10,8 +10,8 @@ setup:
 
 deploy:
 	@echo "Deploy Python package to Python Package Index (PyPI)"
-	 python3 -m twine upload -u $(USERNAME) -p $(PASSWORD) --repository testpypi dist/*
+	 python3 -m twine upload --skip-existing \
+ 	  	-u $(USERNAME) -p $(PASSWORD) --repository testpypi dist/*
 
-# Docker
-#push-image:
-#	docker
+all: pip-install setup deploy
+

@@ -27,7 +27,8 @@ jobs:
       python: "3.7"
       install:
         - make pip-install
-        #- pytest
+      script:
+        - pytest
     - name: "Deploy package to PyPI"
       stage: deploy
       install:
@@ -42,13 +43,13 @@ before_install:
   - chmod +x ./scripts/docker-image.sh
   - make pip-install
 
-
 # install required dependencies
-install:
-  - make pip-install
+install: skip
 
-script:
-  - pytest
+# run the build script
+script: skip
+  # - pytest
 
+# enable or disable notifications
 notifications:
   email: false
