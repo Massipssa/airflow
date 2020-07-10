@@ -6,7 +6,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name="example-pkg-massipssa",
-    version="0.0.1",
+    version="0.0.2",
     author="Example Author",
     author_email="kerrache.massipssa@gmail.com",
     description="A small example package",
