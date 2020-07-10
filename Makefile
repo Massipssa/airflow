@@ -10,7 +10,7 @@ setup:
 
 deploy:
 	@echo "Deploy Python package to Python Package Index (PyPI)"
-	 python3 -m twine upload -u $USERNAME -p $PASSWORD --repository testpypi dist/*
+	 python3 -m twine upload -u $(USERNAME) -p $(PASSWORD) --repository testpypi dist/*
 
 # Docker
 #push-image:
