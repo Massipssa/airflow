@@ -33,7 +33,7 @@ jobs:
     - name: "Build docker image"
       stage: build
       install:
-        - docker build -t $REPO/$TAG:$VERSION
+        - docker build -t $REPO/$TAG:$VERSION .
     - name: "Push docker image"
       stage: push
       install: skip
