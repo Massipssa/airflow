@@ -45,8 +45,8 @@ before_install:
 install:
   - make pip-install
 
-#script:
-#  - pytest
+script:
+  - pytest
 
 notifications:
   email: false
