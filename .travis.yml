@@ -10,15 +10,30 @@ env:
 # stages names from jobs
 stages: 
   - test
+  - deploy
   
 # services to install
 services:
   - docker
+
 jobs:
   include:
     - name: "Test with py 3.7"
       stage: test
       python: "3.7"
+      install:
+        - make pip-install
+    - name: "deploy"
+      stage: deploy
+      install:
+        - make upgrade-setuptools
+    - name: "Build docker image"
+      stage: build
+      install: skip
+    - name: "Push docker image"
+      stage: push
+      install: skip
+
 # install required dependencies
 install: skip
   # - pip install -r requirements.txt
