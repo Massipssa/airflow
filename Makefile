@@ -1,6 +1,7 @@
 
 pip-install:
-	pip3 install -r requirements/requirements-python3.7.txt
+	pip install -r requirements/requirements-python3.7.txt
 
 upgrade-setuptools:
-	pip3 install --user --upgrade setuptools wheel
+	# pip3 install --user --upgrade setuptools wheel
+	pip install --upgrade setuptools wheel
