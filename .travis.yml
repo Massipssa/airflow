@@ -12,6 +12,8 @@ env:
 stages: 
   - test
   - deploy
+  - build
+  - push
   
 # services to install
 services:
