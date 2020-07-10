@@ -8,12 +8,11 @@ env:
     - VERSION=0.0.1
     - IMAGE_NAME=myimage
     - USERNAME=massipssa
-    #- PASSWORD=toto
+
 # stages names from jobs
 stages: 
   - test
   - deploy
-  - build
   - push
   
 # services to install
@@ -31,15 +30,10 @@ jobs:
       stage: deploy
       install:
         - make upgrade-setuptools
-    - name: "Build docker image"
-      stage: build
-      install:
-        - docker login -u $USERNAME -p $PASSWORD
-        - docker build -t $USERNAME/$IMAGE_NAME:$VERSION .
-        - docker push $USERNAME/$IMAGE_NAME:$VERSION
-    - name: "Push docker image to Docker Hub"
+    - name: "Build and push image to Docker Hub"
       stage: push
-      install: skip
+      install:
+        - ./scripts/docker-image.sh push
 
 # install required dependencies
 install: skip
