@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
+
 # set default args
 default_args = {
     'owner': 'massi',
@@ -14,6 +15,7 @@ default_args = {
 
 # define a DAG
 dag = DAG(dag_id='test_dag', default_args=default_args, schedule_interval="2 * * * *")
+
 
 # define tasks
 task_1 = BashOperator(

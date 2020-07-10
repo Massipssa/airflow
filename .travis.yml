@@ -7,8 +7,13 @@ env:
   global:
     - ONE=1
     - TWO=2
+# stages names from jobs
 stages: 
   - test
+  
+# services to install
+services:
+  - docker
 jobs:
   include:
     - name: "Test with py 3.7"
