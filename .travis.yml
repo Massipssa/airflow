@@ -40,6 +40,8 @@ jobs:
 
 before_install:
   - chmod +x ./scripts/docker-image.sh
+  - make pip-install
+
 
 # install required dependencies
 install:
