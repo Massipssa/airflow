@@ -31,8 +31,6 @@ jobs:
      # add codecov
       script:
         - coverage run -m pytest
-     after_success:
-        - bash <(curl -s https://codecov.io/bash)
     - name: "Deploy package to PyPI"
       stage: deploy
       install:
@@ -53,6 +51,9 @@ install: skip
 
 # run the build script
 script: skip
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 # enable or disable notifications
 notifications:
