@@ -1,1 +1,9 @@
- airflow connections -a --conn_id query_hive --conn_type hive_cli --conn_host domainhere --conn_port 10000 --conn_schema default --conn_extra "{\"use_beeline\":\"true\", \"ssl-options\":\"ssl=true;sslTrustStore=path-${RUNTIME_ENV}.jks;trustStorePassword=${QUERY_JKS_PASW}\"}" --conn_login "test_login" --conn_password "test_pawwsord"
+
+# create cnx
+airflow connections -a --conn_id query_hive --conn_type hive_cli \
+    --conn_host domainhere \
+    --conn_port 10000 \
+    --conn_schema default \
+    --conn_extra "{\"use_beeline\":\"true\", \"ssl-options\":\"ssl=true;sslTrustStore=path-${RUNTIME_ENV}.jks;trustStorePassword=${QUERY_JKS_PASW}\"}" \
+    --conn_login "test_login" \
+    --conn_password "test_pawwsord"

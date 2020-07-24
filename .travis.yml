@@ -9,6 +9,7 @@ env:
     - VERSION=0.0.1
     - IMAGE_NAME=myimage
     - USERNAME=massipssa
+    - CODECOV_TOKEN="337e08e9-8713-4741-88a2-a94f2aad092e"
 
 # stages names from jobs
 stages: 
@@ -48,7 +49,9 @@ install: skip
 
 # run the build script
 script: skip
-  # - pytest
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 # enable or disable notifications
 notifications:

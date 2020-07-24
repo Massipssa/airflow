@@ -1,3 +1,6 @@
+# ??
+.PHONY: pip-install setup deploy
+
 REQUIREMENTS="requirements/requirements-python3.7.txt"
 
 pip-install:
@@ -14,4 +17,3 @@ deploy:
  	  	-u $(USERNAME) -p $(PASSWORD) --repository testpypi dist/*
 
 all: pip-install setup deploy
-
