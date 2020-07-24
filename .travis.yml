@@ -34,10 +34,11 @@ jobs:
       stage: deploy
       install:
         - make setup
+      script:  
         - make deploy
     - name: "Build and push image to Docker Hub"
       stage: push
-      install:
+      script:
         - ./scripts/docker-image.sh push
 
 before_install:
